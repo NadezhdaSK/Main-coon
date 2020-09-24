@@ -1,0 +1,40 @@
+.header {
+    position: relative;
+    background: $bgdark url('../img/HeaderCat.png') no-repeat 100% 100%;
+    height: 100vh;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        max-width: 962px;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 46px;
+    }
+
+    &__city {
+        font-size: 16px;
+    }
+
+    &__title {
+        width: 350px;
+        color: $color-caption;
+        font-family: $font-caption;
+        font-weight: 400;
+        font-size: 52px;
+        line-height: 60px;
+    }
+
+    &__subtitle {
+        margin-bottom: 50px;
+        width: 280px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

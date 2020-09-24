@@ -49,7 +49,7 @@ gulp.task("build-js", () => {
 });
 
 gulp.task("build-sass", () => {
-    return gulp.src("./source/scss/**/*.scss")
+    return gulp.src("./source/scss/style.scss")
                 .pipe(sass().on('error', sass.logError))
                 .pipe(gulp.dest(dist + '/css'))
                 .pipe(browsersync.stream());

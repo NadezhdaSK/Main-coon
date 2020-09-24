@@ -1,0 +1,23 @@
+.button {
+    display: flex;
+    width: 200px;
+    min-height: 52px;
+    background-color: transparent;
+    border: 0.5px solid $color-first;
+    align-items: center;
+    justify-content: center;
+    color: $color-caption;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+
+    &:hover,
+    &:focus {
+        background-color: $color-first;
+    }
+
+    &:active {
+        opacity: 0.9;
+    }
+}

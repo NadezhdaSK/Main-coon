@@ -1,3 +1,4 @@
-body {
-    color: green;
-}
+@import 'variables.scss';
+@import "global.scss";
+@import "blocks/button.scss";
+@import "blocks/header.scss";
