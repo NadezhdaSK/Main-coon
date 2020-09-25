@@ -4,10 +4,10 @@
   box-sizing: inherit; }
 
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  min-width: 320px; }
 
 body {
-  min-width: 320px;
   padding: 0;
   margin: 0;
   font-family: "Roboto", "Arial", sans-serif;
@@ -40,10 +40,18 @@ img {
   .button:active {
     opacity: 0.9; }
 
+@media (max-width: 767px) and (min-width: 320px) {
+  .button {
+    font-size: 12px;
+    line-height: 20px;
+    width: 140px;
+    min-height: 40px;
+    margin: 0 auto; } }
+
 .header {
   position: relative;
-  background: #181617 url("../img/HeaderCat.png") no-repeat 100% 100%;
-  height: 100vh; }
+  padding-left: 40px;
+  background: #181617; }
   .header__wrapper {
     display: flex;
     align-items: center;
@@ -69,3 +77,59 @@ img {
     width: 280px;
     font-size: 16px;
     line-height: 24px; }
+  .header__cat {
+    position: absolute;
+    bottom: 0; }
+
+@media (min-width: 1366px) {
+  .header {
+    height: 684px; }
+    .header__cat {
+      right: -25px; } }
+
+@media (max-width: 1366px) and (min-width: 981px) {
+  .header {
+    overflow: hidden;
+    height: 684px; }
+    .header__cat {
+      left: 42%; } }
+
+@media (max-width: 980px) and (min-width: 768px) {
+  .header {
+    overflow: hidden;
+    padding-top: 70px;
+    height: 595px; }
+    .header__logo {
+      top: 30px; }
+    .header__cat {
+      height: 535px;
+      width: auto;
+      left: 40%; } }
+
+@media (max-width: 767px) and (min-width: 320px) {
+  .header {
+    overflow: hidden;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 100px;
+    min-height: 617px;
+    text-align: center; }
+    .header__wrapper {
+      max-width: 250px; }
+    .header__subtitle, .header__title {
+      width: 250px; }
+    .header__logo {
+      top: 30px; }
+    .header__city, .header__subtitle {
+      font-size: 14px;
+      line-height: 20px; }
+    .header__subtitle {
+      margin-bottom: 35px; }
+    .header__title {
+      margin: 15px 0;
+      font-size: 36px;
+      line-height: 42px; }
+    .header__cat {
+      width: 320px;
+      left: 50%;
+      transform: translateX(-50%); } }

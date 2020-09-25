@@ -21,3 +21,13 @@
         opacity: 0.9;
     }
 }
+
+@media (max-width: $tablet - 1) and (min-width: $mobile) {
+    .button {
+        font-size: 12px;
+        line-height: 20px;
+        width: 140px;
+        min-height: 40px;
+        margin: 0 auto;
+    }
+}
