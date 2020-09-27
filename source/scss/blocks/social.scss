@@ -1,0 +1,23 @@
+.social {
+
+    &__item {
+        a {
+            transition: 0.3s;
+            
+            &:focus,
+            &:hover {
+                opacity: 0.5;
+                outline: none;
+                
+            } 
+    
+            &:active {
+                opacity: 0.2;
+            }
+        }
+    }
+     
+    &__item + &__item {
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,133 @@
+.footer {
+    background-color: $bgdark;
+    
+    &__wrapper {
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    &__contacts {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__social {
+        text-align: center;
+        display: flex;
+        list-style: none;
+        padding: 0;
+    }
+
+    &__address {
+        color: $color-footer;
+        font-size: $font-size-m;
+    }
+
+    &__tel {
+
+        a {
+            color: $color-footer;
+            font-size: $font-size-m;
+            font-weight: 700;
+            transition: 0.3s;
+
+            &:hover,
+            &:focus {
+                opacity: 0.5;
+                outline: none;
+            }
+
+            &:active {
+                opacity: 0.2;
+            }
+        }
+        
+    }
+}
+
+@media (min-width: $min-desktop) {
+    .footer {
+        &__wrapper {
+            width: 850px;
+            padding: 70px 0;
+        }
+
+        &__logo {
+            margin-right: 120px;
+            align-self: flex-start;
+        }
+
+        &__address {
+            width: 350px;
+            margin-left: 20px;
+        }
+
+        &__contacts {
+            width: 670px;
+        }
+    }
+}
+
+@media (min-width: $tablet) and (max-width: $min-desktop) {
+    .footer {
+
+        &__wrapper {
+            padding: 39px 20px;
+        }
+
+        &__contacts {
+            margin: 0 auto;
+            width: 670px;
+        }
+
+        &__address {
+            width: 350px;
+        }
+
+        &__logo {
+            display: none;
+            margin-right: 120px;
+            align-self: flex-start;
+        }
+    }
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .footer {
+
+        &__wrapper {
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        &__contacts {
+            flex-direction: column;
+        }
+
+        &__address {
+            order: 1;
+            margin-bottom: 15px;
+        }
+
+        &__tel {
+            order: 2;
+            margin-bottom: 20px;
+
+            a {
+                font-weight: 400;
+            }
+        }
+
+        &__social {
+            margin-bottom: 25px;
+            order: 3;
+        }
+
+        &__logo {
+            order: 1;
+        }
+    }
+}

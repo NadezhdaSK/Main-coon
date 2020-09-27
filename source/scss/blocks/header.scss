@@ -19,7 +19,7 @@
     }
 
     &__city {
-        font-size: 16px;
+        font-size: $font-size-l;
     }
 
     &__title {
@@ -27,14 +27,14 @@
         color: $color-caption;
         font-family: $font-caption;
         font-weight: 400;
-        font-size: 52px;
+        font-size: $font-size-xxl;
         line-height: 60px;
     }
 
     &__subtitle {
         margin-bottom: 50px;
         width: 280px;
-        font-size: 16px;
+        font-size: $font-size-l;
         line-height: 24px;
     }
 
@@ -60,7 +60,6 @@
         height: 684px;
 
         &__cat {
-            // width: 80%;
             left:42%;
         }
     }
@@ -108,7 +107,7 @@
 
         &__city,
         &__subtitle {
-            font-size: 14px;
+            font-size: $font-size-m;
             line-height: 20px;
         }
 
@@ -118,7 +117,7 @@
 
         &__title {
             margin: 15px 0;
-            font-size: 36px;
+            font-size: $font-size-xl;
             line-height: 42px;
         }
 
