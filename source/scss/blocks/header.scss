@@ -27,7 +27,7 @@
         color: $color-caption;
         font-family: $font-caption;
         font-weight: 400;
-        font-size: $font-size-xxl;
+        font-size: $font-size-title;
         line-height: 60px;
     }
 
@@ -117,7 +117,7 @@
 
         &__title {
             margin: 15px 0;
-            font-size: $font-size-xl;
+            font-size: $font-size-subtitle;
             line-height: 42px;
         }
 

@@ -1,0 +1,208 @@
+.pets {
+    text-align: center;
+    margin: 0 auto;
+
+    &__title {
+        margin-bottom: 23px;
+    }
+
+    &__descr {
+        max-width: 520px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        font-weight: 300;
+        line-height: 26px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        list-style: none;
+        text-align: center;
+        padding: 0;
+    }
+
+    &__item + &__item {
+        margin-left: 40px;
+    }
+
+    &__item button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #ffffff;
+        font-family: inherit;
+        font-size: 18px;
+        font-weight: 500;
+        opacity: 0.2;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+
+        &:active {
+            opacity: 0.5;
+            transition: 0s;
+        }
+    }
+
+    &__item.active button {
+        opacity: 1;
+    }
+
+    &__button {
+        margin: 0 auto;
+    }
+}
+@media (min-width: 1104px) {
+    .pets {
+        width: 1103px;
+        margin-top: 220px;
+        margin-bottom: 80px;
+
+        &__photo {
+            display: grid;
+            grid-template-columns: 517px 471px;
+            grid-template-rows: 214px 241px;
+            grid-row-gap: 30px;
+            grid-column-gap: 35px;
+            margin-bottom: 55px;
+    
+            &:nth-child(2) {
+                grid-row-start: 1;
+                grid-row-end: 3;
+            }
+        }
+
+        &__arrow {
+            display: none;
+        }
+    }
+}
+@media (max-width: 1103px) and (min-width: $tablet) {
+    .pets {
+        margin-top: 100px;
+        margin-bottom: 90px;
+
+        &__photo {
+            position: relative;
+            height: 485px;
+            width: 603px;
+            margin: 0 30px;
+
+            img {
+                position: absolute;
+
+                &:nth-child(3) {
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &:nth-child(1) {
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &:nth-child(2) {
+                    left: 50%;
+                    top: 0;
+                    transform: translateX(-50%);
+                    z-index: 1;
+                }
+            }
+        }
+
+        &__arrow {
+            width: 12px;
+            height: 30px;
+        }
+    }
+}
+
+@media (max-width: 1103px) and (min-width: $mobile) {
+    .pets {
+
+        &__slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 55px;
+        }
+
+        &__arrow {
+            width: 12px;
+            height: 30px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: 0.3s;
+    
+            &--left {
+                background-image: url(../img/icons/sliderLeft.svg);
+            }
+    
+            &--right {
+                background-image: url(../img/icons/sliderRight.svg);
+            }
+
+            &:hover,
+            &:focus {
+                opacity: 0.5;
+                outline: none;
+            }
+
+            &:active {
+                opacity: 0.2;
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet - 1) and (min-width: $mobile) {
+    .pets {
+        margin-top: 60px;
+        margin-bottom: 60px;
+
+        &__title {
+            font-size: $font-size-subtitle-mobile;
+        }
+
+        &__descr {
+            font-size: $font-size-m;
+            line-height: 20px;
+        }
+
+        &__item button {
+            font-size: 16px;
+        }
+
+        &__arrow {
+            width: 8px;
+            height: 18px;
+        }
+
+
+        &__photo {
+            margin: 0 20px;
+
+            img {
+                width: 100%;
+
+                &:not(:nth-child(2)) {
+                    display: none;
+                }
+            }
+        }
+        
+    }
+}
