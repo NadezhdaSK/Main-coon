@@ -353,7 +353,7 @@ img {
 
 @media (min-width: 1366px) {
   .header {
-    height: 684px; }
+    height: 100vh; }
     .header__cat {
       right: -25px; } }
 
