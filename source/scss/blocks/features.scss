@@ -1,0 +1,227 @@
+.features {
+    margin: 0 auto;
+
+    &__title {
+        margin-bottom: 23px;
+    }
+
+    &__descr {
+        margin: 0 auto;
+        margin-bottom: 20px;
+        font-weight: 300;
+        line-height: 26px;
+        text-align: center;
+    }
+
+    &__img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    &__cat {
+        position: relative;
+    }
+
+    &__text {
+        color: #ffffff;
+        font-weight: 300;
+
+        &::before {
+            position: absolute;
+            content: "";
+            background-color: $color-first;
+            border-radius: 50%;
+        }
+    }
+}
+
+@media (min-width: $tablet) {
+    .features {
+        &__text {
+            position: absolute;
+            line-height: 23px;
+    
+            &:nth-of-type(1),
+            &:nth-of-type(2) {
+                text-align: right;
+            }
+        }
+    }
+    
+}
+
+@media (min-width: 1104px) {
+    .features {
+        width: 1100px;
+        margin-bottom: 105px;
+
+        &__descr {
+            max-width: 740px;
+        }
+
+        &__text {
+    
+            &:nth-of-type(1) {
+                max-width: 210px;
+                top: 184px;
+                left: 45px;
+            }
+    
+            &:nth-of-type(2) {
+                max-width: 210px;
+                top: 470px;
+                left: 22px;
+            }
+    
+            &:nth-of-type(1),
+            &:nth-of-type(2) {
+                text-align: right;
+    
+                &::before {
+                    top: 7px;
+                    right: -34px;
+                }
+            }
+    
+            &:nth-of-type(3) {
+                max-width: 200px;
+                top: 292px;
+                right: 19px;
+            }
+    
+            &:nth-of-type(4) {
+                max-width: 165px;
+                top: 512px;
+                right: 87px;
+            }
+    
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+                &::before {
+                    top: 0;
+                    left: -31px;
+                }
+            }
+    
+            &::before {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1103px) and (min-width: $tablet) {
+    .features {        
+        width: 710px;
+        margin-bottom: 95px;
+
+        &__img {
+            width: 418px;
+        }
+
+        &__title {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        &__descr {
+            width: 90%;
+            margin-bottom: 40px;
+        }
+
+        &__text {
+    
+            &:nth-of-type(1) {
+                max-width: 170px;
+                top: 120px;
+                left: -12px;
+            }
+    
+            &:nth-of-type(2) {
+                max-width: 140px;
+                top: 317px;
+                left: 3px;
+            }
+    
+            &:nth-of-type(1),
+            &:nth-of-type(2) {
+                text-align: right;
+    
+                &::before {
+                    top: 5px;
+                    right: -26px;
+                }
+            }
+    
+            &:nth-of-type(3) {
+                max-width: 135px;
+                top: 195px;
+                right: -4px;
+            }
+    
+            &:nth-of-type(4) {
+                max-width: 110px;
+                top: 342px;
+                right: 45px;
+            }
+    
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+                &::before {
+                    top: 3;
+                    left: -25px;
+                }
+            }
+    
+            &::before {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet - 1) and (min-width: $mobile) {
+    .features {        
+        margin-bottom: 55px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &__img {
+            max-width: 88%;
+            margin-bottom: 35px;
+        }
+
+        &__title {
+            font-size: $font-size-subtitle-mobile;
+        }
+
+        &__descr {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: $font-size-m;
+            line-height: 20px;
+        }
+
+        &__text {
+            position: relative;
+            padding-left: 13px;
+            font-size: $font-size-m;
+            line-height: 20px;
+    
+            &::before {
+                width: 8px;
+                height: 8px;
+                top: 2px;
+                left: -4px;
+            }
+        }
+
+        &__text + &__text {
+            margin-top: 25px;
+        }
+    }
+}
+

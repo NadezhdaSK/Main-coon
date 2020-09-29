@@ -15,9 +15,6 @@
 
     &__social {
         text-align: center;
-        // display: flex;
-        // list-style: none;
-        // padding: 0;
     }
 
     &__address {
@@ -94,7 +91,7 @@
     }
 }
 
-@media (min-width: $mobile) and (max-width: $tablet) {
+@media (min-width: $mobile) and (max-width: $tablet - 1) {
     .footer {
 
         &__wrapper {
