@@ -1,0 +1,171 @@
+.aboutUs {
+    background-color: $bgdark;
+    text-align: center;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 1150px;
+        list-style: none;
+        padding: 0;
+    }
+
+    &__item {
+        background-color: $bglight;
+
+        svg {
+            fill: $color-first;
+            stroke: $bglight;
+        }
+
+        &:hover {
+            svg {
+                fill: #fff;
+                stroke: $color-first;
+            }
+            
+            .aboutUs__block {
+                background-color: #a07b50;
+            }
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__text {
+        color: #ffffff;
+        font-weight: 300;
+    }
+}
+
+@media (min-width: $tablet + 1) {
+    .aboutUs {
+        &__item {
+            margin-bottom: 34px;
+            width: 360px;
+            min-height: 300px;
+            padding: 17px 20px;
+        }
+
+        &__block {
+            padding: 47px 35px 20px;
+            min-height: 265px;
+        }
+
+        &__icon {
+            margin-bottom: 35px;
+        }
+    }
+}
+
+@media (min-width: $min-desktop + 1) {
+    .aboutUs {
+        padding: 80px 40px 65px;
+
+        &__title {
+            margin-bottom: 23px;
+        }
+    
+        &__subtitle {
+            margin-bottom: 47px;
+        }
+
+        &__list {
+            justify-content: center;
+        }
+
+        &__item {
+
+            &:not(:last-child) {
+                margin-right: 34px;
+            }
+        }
+    }
+}
+
+@media (min-width: $tablet + 1) and (max-width: $min-desktop) {
+    .aboutUs {
+        padding: 80px 30px 65px;
+
+        &__title {
+            margin-bottom: 23px;
+        }
+    
+        &__subtitle {
+            margin-bottom: 58px;
+        }
+
+        &__list {
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .aboutUs {
+        padding: 60px 15px 30px;
+
+        &__title {
+            margin-bottom: 35px;
+            font-size: $font-size-subtitle-mobile;
+        }
+    
+        &__subtitle {
+            margin-bottom: 40px;
+            font-size: $font-size-m;
+            line-height: 18px;
+            font-weight: 300;
+        }
+
+        &__list {
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        &__item {
+            margin-bottom: 30px;
+            max-width: 360px;
+            min-height: 248px;
+            padding: 15px;
+        }
+
+        &__block {
+            padding: 40px 40px 20px;
+            min-height: 218px;
+        }
+
+        &__icon {
+            margin-bottom: 20px;
+
+            &--year {
+                width: 80px;
+                height: 88px;
+            }
+
+            &--day {
+                width: 80px;
+                height: 71px;
+            }
+
+            &--corm {
+                width: 57px;
+                height: 88px;
+            }
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+}
