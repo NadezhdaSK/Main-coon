@@ -1,0 +1,124 @@
+.care {
+    width: 100%;
+    background: $bgdark url(../img/bgCat.jpg) no-repeat 50% 50%;
+    background-size: cover;
+
+
+    &__list {
+        margin: 0 auto;
+        list-style: none;
+        padding: 0;
+    }
+
+    &__item {
+        position: relative;
+        max-width: 560px;
+        height: 165px;
+        padding: 30px 100px 15px 60px;
+        border: 0.5px solid $color-first;
+        margin-bottom: 40px;
+    }
+
+    &__subtitle {
+        margin-bottom: 15px;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    &__descr {
+        font-size: 14px;
+        line-height: 24px;
+        color: #ffffff;
+        font-weight: 300;
+    }
+
+    &__button {
+        position: absolute;
+        content: "";
+        width: 60px;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: $color-first url(../img/icons/arrow.svg) no-repeat 50% 50%;
+        transition: 0.3s;
+
+        &:hover,
+        &:focus {
+            opacity: 0.5;
+            outline: none;
+        }
+
+        &:active {
+            opacity: 0.2;
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    .care {
+        height: 645px;
+        padding: 70px 100px 100px;
+    
+        &__title {
+            margin-bottom: 50px;
+        }
+    
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 1150px;
+        }
+    }
+}
+
+@media (min-width: $tablet) and (max-width: $desktop - 1) {
+    .care {
+        height: 1018px;
+        padding: 80px 100px 90px;
+    
+        &__title {
+            margin-bottom: 35px;
+        }
+    
+        &__list {
+            margin: 0 auto;
+            max-width: 560px;
+        }
+    }
+}
+
+@media (min-width: $mobile) and (max-width: $tablet - 1) {
+    .care {
+        height: 966px;
+        padding: 50px 15px 30px;
+    
+        &__title {
+            margin-bottom: 35px;
+            font-size: $font-size-subtitle-mobile;
+        }
+    
+        &__list {
+            margin: 0 auto;
+            max-width: 560px;
+        }
+
+        &__item {
+            margin-bottom: 30px;
+            padding: 20px 60px 20px 20px;
+        }
+
+        &__subtitle {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        &__descr {
+            line-height: 20px;
+        }
+    
+        &__button {
+            width: 45px;
+        }
+    }
+}
