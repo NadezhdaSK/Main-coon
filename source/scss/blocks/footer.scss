@@ -15,6 +15,10 @@
 
     &__social {
         text-align: center;
+
+        svg {
+            fill: $color-first;
+        }
     }
 
     &__address {

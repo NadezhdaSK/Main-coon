@@ -1,0 +1,191 @@
+.team {
+    background-color: $bgdark;
+
+    &__subtitle {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__block {
+        position: relative;
+        margin: 0 auto;
+        background-color: $bglight;
+    }
+
+    &__name {
+        margin-bottom: 10px;
+        font-size: $font-size-name;
+        font-weight: 500;
+    }
+
+    &__descr {
+        color: rgba(#ffffff, 0.7);
+        font-weight: 300;
+    }
+
+    &__photo {
+        position: absolute;
+    }
+
+    &__social svg {
+        fill: #ffffff;
+    }
+
+    &__button {
+        position: absolute;
+    }
+}
+
+@media (min-width: $tablet) {
+    .team {
+        &__title {
+            margin-bottom: 20px;
+        }
+
+        &__subtitle {
+            max-width: 510px;
+            margin: 0 auto;
+            margin-bottom: 25px;
+            text-align: center;
+            line-height: 26px;
+        }
+
+        &__block {
+            width: 660px;
+            border: 24px solid $bgdark;
+            outline: 0.5px solid rgba($color-first, 0.4);
+            padding: 70px 100px;
+        }
+    
+        &__post {
+            margin-bottom: 25px;
+        }
+
+        &__descr {
+            margin-bottom: 45px;
+            font-weight: 300;
+            line-height: 25px;
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    .team {
+        padding: 80px 185px 70px;
+
+        &__photo {
+            left: -332px;
+            top: -26px;
+    
+        }
+
+        &__block {
+            left: 155px;
+        }
+
+        &__button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+    
+            &--left {
+                left: -400px;
+            }
+    
+            &--right {
+                right: -100px;
+            }
+        }
+    }
+}
+
+@media (min-width: $tablet) and (max-width: $desktop - 1) {
+    .team {
+        padding: 80px 50px 195px;
+
+        &__photo {
+            width: 208px;
+            bottom: -120px;
+            right: 30px;
+        }
+
+        &__button {
+            position: absolute;
+            bottom: -125px;
+    
+            &--left {
+                right: 270px;
+            }
+    
+            &--right {
+                right: -10px;
+            }
+        }
+    }
+}
+
+@media (min-width: $mobile) and (max-width: $tablet - 1) {
+    .team {
+        padding: 60px 15px;
+
+        &__title {
+            margin-bottom: 30px;
+            font-size: $font-size-subtitle-mobile;
+        }
+
+        &__subtitle {
+            margin-left: 25px;
+            margin-right: 25px;
+            margin-bottom: 100px;
+            font-size: $font-size-m;
+            font-weight: 300;
+            line-height: 20px;
+        }
+
+        &__photo {
+            width: 126px;
+            top: -63px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &__block {
+            max-width: 400px;
+            padding: 85px 10px 15px;
+            text-align: center;
+        }
+
+        &__name {
+            margin-bottom: 8px;
+            font-size: $font-size-name-mobile;
+        }
+    
+        &__post {
+            margin-bottom: 20px;
+            font-size: $font-size-m;
+        }
+
+        &__descr {
+            margin-bottom: 25px;
+            font-size: $font-size-m;
+            line-height: 20px;
+        }
+
+        &__social {
+            justify-content: center;
+        }
+
+        &__button {
+            top: -12px;
+            transform: translateX(-50%);
+    
+            &--left {
+                left: calc(50% - 90px);
+            }
+    
+            &--right {
+                left: calc(50% + 90px);
+            }
+        }
+    }
+}

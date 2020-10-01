@@ -32,3 +32,35 @@
         margin: 0 auto;
     }
 }
+
+.button__arrow {
+    width: 12px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+    opacity: 0.5;
+
+    &--left {
+        background-image: url(../img/icons/sliderLeft.svg);
+    }
+
+    &--right {
+        background-image: url(../img/icons/sliderRight.svg);
+    }
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+        outline: none;
+    }
+
+    &:active {
+        opacity: 0.7;
+    }
+    
+}

@@ -135,36 +135,6 @@
             align-items: center;
             margin-bottom: 55px;
         }
-
-        &__arrow {
-            width: 12px;
-            height: 30px;
-            background-color: transparent;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            background-size: contain;
-            background-repeat: no-repeat;
-            transition: 0.3s;
-    
-            &--left {
-                background-image: url(../img/icons/sliderLeft.svg);
-            }
-    
-            &--right {
-                background-image: url(../img/icons/sliderRight.svg);
-            }
-
-            &:hover,
-            &:focus {
-                opacity: 0.5;
-                outline: none;
-            }
-
-            &:active {
-                opacity: 0.2;
-            }
-        }
     }
 }
 
