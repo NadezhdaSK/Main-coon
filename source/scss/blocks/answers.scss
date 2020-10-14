@@ -197,13 +197,13 @@
 
         &__title {
             margin-bottom: 30px;
-            font-size: 28px;
+            font-size: $font-size-subtitle-mobile;
         }
     
         &__subtitle {
             margin-bottom: 40px;
             max-width: 180px;
-            font-size: 14px;
+            font-size: $font-size-m;
             line-height: 20px;
             font-weight: 300;
         }
@@ -222,13 +222,13 @@
         &__question {
             padding: 10px 55px 10px 15px;
             min-height: 60px;
-            font-size: 14px;
+            font-size: $font-size-m;
             line-height: 20px;
         }
 
         &__answer {
             padding: 10px 25px 10px 15px;
-            font-size: 14px;
+            font-size: $font-size-m;
             line-height: 20px;
         }
 

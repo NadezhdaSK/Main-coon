@@ -1,0 +1,74 @@
+.recall {
+    margin-bottom: 112px;
+    &__title {
+        margin-bottom: 50px;
+    }
+
+    &__block {
+        position: relative;
+        transform: translateX(220px);
+        margin: 0 auto;
+        background-color: #000000;
+        width: 640px;
+        padding: 108px 87px 100px 145px;
+    }
+
+    &__down {
+        display: flex;
+        align-items: center;
+    }
+
+    &__date {
+        margin-right: 36px;
+    }
+
+    &__name {
+        margin-bottom: 10px;
+        font-size: $font-size-name;
+        font-weight: 500;
+        color: #fff;
+    }
+
+    &__social {
+        margin: 0;
+
+        a {
+            margin-right: 10px;
+            padding: 7px;
+            border: 0.5px solid rgba($color-first, 0.27);
+        }
+    }
+
+    &__social svg {
+        fill: $color-first;
+    }
+
+    &__descr {
+        margin-bottom: 45px;
+        font-weight: 300;
+        font-size: $font-size-m;
+        line-height: 23px;
+        color: #fff;
+        opacity: .72;
+    }
+
+    &__photo {
+        position: absolute;
+        left: -380px;
+            top: 45px;
+    }
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &--left {
+            left: -530px;
+        }
+
+        &--right {
+            right: -100px;
+        }
+    }
+}
