@@ -80,8 +80,8 @@ gulp.task("copy", function() {
 gulp.task("compress", function() {
   return pipeline(
     gulp.src("source/js/main.js"),
-    uglify(),
-    rename("main.min.js"),
+    // uglify(),
+    // rename("main.min.js"),
     gulp.dest("build/js")
   );
 });
@@ -98,6 +98,7 @@ gulp.task("server", function () {
   gulp.watch("source/scss/**/*.scss", gulp.series("css"));
   gulp.watch("source/img/icon/*.svg", gulp.series("sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
+  gulp.watch("source/js/*.js", gulp.series("compress"));
 });
 
 gulp.task("refresh", function (done) {

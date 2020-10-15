@@ -33,7 +33,16 @@
 
         &.active {
             .answers__answer {
+                // overflow: hidden;
+                // z-index: 1;
                 display: block;
+                // animation-name: answer;
+                // animation-duration: 0.3s;
+            }
+
+            .answers__answer-wrap {
+                animation-name: answer;
+                animation-duration: 0.3s;
             }
 
             .answers__button {
@@ -114,12 +123,18 @@
     }
 
     &__answer {
+        overflow: hidden;
+        // position: relative;
         display: none;
+        // z-index: -100;
+        // transform: translateY(-200%);
+        // transform: scale(0);
         border-left: 0.5px solid rgba($color-first, 0.4);
         border-right: 0.5px solid rgba($color-first, 0.4);
         border-bottom: 0.5px solid rgba($color-first, 0.4);
         font-weight: 300;
     }
+
 }
 
 @media (min-width: $min-desktop + 1) {
@@ -235,5 +250,16 @@
         &__button {
             width: 43px;
         }
+    }
+}
+
+@keyframes answer {
+    0% {
+        display: none;
+        transform: translateY(-200%);
+    }
+    100% {
+        display: block;
+        transform: translateY(0);
     }
 }
