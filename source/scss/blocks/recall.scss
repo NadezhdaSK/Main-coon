@@ -1,5 +1,6 @@
 .recall {
     margin-bottom: 112px;
+
     &__title {
         margin-bottom: 50px;
     }
@@ -8,7 +9,7 @@
         position: relative;
         transform: translateX(220px);
         margin: 0 auto;
-        background-color: #000000;
+        background-color: #151313;
         width: 640px;
         padding: 108px 87px 100px 145px;
     }
@@ -55,7 +56,7 @@
     &__photo {
         position: absolute;
         left: -380px;
-            top: 45px;
+        top: 45px;
     }
 
     &__button {
@@ -64,11 +65,98 @@
         transform: translateY(-50%);
 
         &--left {
-            left: -530px;
+            left: -500px;
         }
 
         &--right {
-            right: -100px;
+            right: -70px;
         }
+    }
+}
+
+@media (max-width: $desktop) and (min-width: $tablet) {
+    .recall {
+        &__block {
+            padding: 150px 80px 43px;
+        }
+
+        &__button {
+            top: 40px;
+            width: 59px;
+            height: 16px;
+    
+            &--left {
+                left: 50px;
+                background-image: url(../img/icons/recall-left.svg);
+            }
+    
+            &--right {
+                right: 50px;
+                background-image: url(../img/icons/recall-right.svg);
+            }
+        } 
+    }
+}
+
+@media (min-width: $mobile) and (max-width: $desktop) {
+    .recall {
+        &__title {
+            margin-bottom: 145px;
+        }
+
+        &__block {
+            text-align: center;
+            transform: translateX(0);
+        }
+
+        &__down {
+            justify-content: center;
+        }
+
+        &__photo {
+            left: 50%;
+            top: -95px;
+            transform: translateX(-50%);
+            width: 302px;
+        }
+
+        &__button {
+            transform: translateY(0);
+        } 
+    }
+}
+
+
+@media (max-width: $tablet - 1) {
+    .recall {
+        margin-bottom: 60px;
+
+        &__title {
+            font-size: $font-size-subtitle-mobile;
+        }
+        &__name {
+            font-size: $font-size-name-mobile;
+        }
+        &__block {
+            width: 90%;
+            padding: 115px 7% 43px;
+        }
+
+        &__photo {
+            top: -83px;
+            width: 242px;
+        }
+
+        &__button {
+            top: -7px;
+    
+            &--left {
+                left: calc(50% - 145px);
+            }
+    
+            &--right {
+                left: calc(50% + 135px);
+            }
+        } 
     }
 }
