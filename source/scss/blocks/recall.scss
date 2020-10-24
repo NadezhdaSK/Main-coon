@@ -53,10 +53,30 @@
         opacity: .72;
     }
 
-    &__photo {
+    &__photo-wrapper {
         position: absolute;
+        overflow: hidden;
+        width: 481px;
+        height: 331px;
         left: -380px;
         top: 45px;
+    }
+
+    &__photo-inner {
+        display: flex;
+        transform: translateX(0);
+        transition: 0.3s;
+    }
+
+    &__block-content {
+        display: none;
+        transition: opacity 0.3s;
+        opacity: 0;
+    }
+
+    &__block-content--active {
+        display: block;
+        opacity: 1;  
     }
 
     &__button {
@@ -113,10 +133,14 @@
             justify-content: center;
         }
 
-        &__photo {
+        &__photo-wrapper {
             left: 50%;
             top: -95px;
             transform: translateX(-50%);
+            width: 302px;
+        }
+
+        &__photo {
             width: 302px;
         }
 
@@ -142,8 +166,12 @@
             padding: 115px 7% 43px;
         }
 
-        &__photo {
+        &__photo-wrapper {
             top: -83px;
+            width: 242px;
+        }
+
+        &__photo {
             width: 242px;
         }
 
