@@ -17,27 +17,20 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // slider team
-
-    const photoInnerTeam = document.querySelector('.team__photo-inner'),
-          photoWrapperTeam = document.querySelector('.team__photo-wrapper'),
-          sliderContentTeam = document.querySelectorAll('.team__block-content'),
-          btnPrevTeam = document.querySelector('.team__button--left'),
-          btnNextTeam = document.querySelector('.team__button--right');
-
+    // slider
 
     class Slider {
         constructor (photoInner, photoWrapper, sliderContent, btnPrev, btnNext, activeClass) {
-            this.photoInner = photoInner;
-            this.photoWrapper = photoWrapper;
-            this.sliderContent = sliderContent;
-            this.sliderContentLength = sliderContent.length;
-            this.btnPrev = btnPrev;
-            this.btnNext = btnNext;
+            this.photoInner = document.querySelector(photoInner);
+            this.photoWrapper = document.querySelector(photoWrapper);
+            this.sliderContent = document.querySelectorAll(sliderContent);
+            this.sliderContentLength = this.sliderContent.length;
+            this.btnPrev = document.querySelector(btnPrev);
+            this.btnNext = document.querySelector(btnNext);
             this.activeClass = activeClass;
             this.offsetPhoto = 0;
             this.index = 0;
-            this.photoWidth = window.getComputedStyle(photoWrapper).width;
+            this.photoWidth = window.getComputedStyle(this.photoWrapper).width;
             this.photoWidth = +this.photoWidth.slice(0, this.photoWidth.length - 2);
         }
 
@@ -87,68 +80,161 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    new Slider (photoInnerTeam, photoWrapperTeam, sliderContentTeam, btnPrevTeam, btnNextTeam, 'team__block-content--active').slider();
+    // slider team
+
+    new Slider (
+        '.team__photo-inner',
+        '.team__photo-wrapper',
+        '.team__block-content',
+        '.team__button--left',
+        '.team__button--right',
+        'team__block-content--active')
+    .slider();
 
     // slider recall
 
-    const photoInnerRecall = document.querySelector('.recall__photo-inner'),
-          photoWrapperRecall = document.querySelector('.recall__photo-wrapper'),
-          sliderContentRecall = document.querySelectorAll('.recall__block-content'),
-          btnPrevRecall = document.querySelector('.recall__button--left'),
-          btnNextRecall = document.querySelector('.recall__button--right');
+    new Slider (
+        '.recall__photo-inner', 
+        '.recall__photo-wrapper', 
+        '.recall__block-content', 
+        '.recall__button--left', 
+        '.recall__button--right', 
+        'recall__block-content--active')
+    .slider();
 
-    new Slider (photoInnerRecall, photoWrapperRecall, sliderContentRecall, btnPrevRecall, btnNextRecall, 'recall__block-content--active').slider();
+    // slider pets
 
-    // new 
+    const photoInnerPets = document.querySelector('.pets__photo--inner'),
+        photoWrapperPets = document.querySelector('.pets__photo--wrapper'),
+        photoPets = document.querySelectorAll('.pets__photo'),
+        photoLengthPets = photoPets.length,
+        btnPrevPets = document.querySelector('.pets__arrow--left'),
+        btnNextPets = document.querySelector('.pets__arrow--right');
 
-    // let offsetPhoto = 0;
-    // let index = 0;
+    if (window.matchMedia("(max-width: 767px)").matches) {
 
-    // let photoWidth = window.getComputedStyle(photoWrapper).width;
-    // photoWidth = +photoWidth.slice(0, photoWidth.length - 2);
+        let offsetPhoto = 0,
+            photoWidth = window.getComputedStyle(photoWrapperPets).width;
+            photoWidth = +photoWidth.slice(0, photoWidth.length - 2);
 
-    // photoInner.style.width = 100 * sliderContent.length + '%';
-    // sliderContent[index].classList.add('team__block-content--active');
+            photoPets.forEach(item => {
+                item.style.width = `${photoWidth}px`;
+            });
 
-    // btnNext.addEventListener('click', () => {
+        photoInnerPets.style.width = 100 * photoLengthPets + '%';
+        
+        btnNextPets.addEventListener('click', () => {
+    
+            if (offsetPhoto == photoWidth * (photoLengthPets - 1)) {
+                offsetPhoto = 0;
+            } else {
+                offsetPhoto += photoWidth;
+            }
+    
+            photoInnerPets.style.transform = `translateX(-${offsetPhoto}px)`;
+    
+        });
+    
+        btnPrevPets.addEventListener('click', () => {
+    
+            if (offsetPhoto == 0) {
+                offsetPhoto = photoWidth * (photoLengthPets - 1);
+            } else {
+                offsetPhoto -= photoWidth;
+            }
+    
+            photoInnerPets.style.transform = `translateX(-${offsetPhoto}px)`;
+    
+        });
+      } 
 
-    //     if (index == sliderContent.length - 1) {
-    //         index = 0;
-    //         offsetPhoto = 0;
-    //         console.log('hi');
-    //     } else {
-    //         index++;
-    //         offsetPhoto += photoWidth;
-    //     }
+      if (window.matchMedia("(max-width: 1103px)").matches) {
+        let index = 1;
 
-    //     photoInner.style.transform = `translateX(-${offsetPhoto}px)`;
+        const catPrev = 'pets__photo--left',
+              catCenter = 'pets__photo--center',
+              catNext = 'pets__photo--right';
 
-    //     sliderContent.forEach(item => {
-    //         item.classList.remove('team__block-content--active');
-    //     });
+        photoPets[0].classList.add(catPrev);
+        photoPets[1].classList.add(catCenter);
+        photoPets[2].classList.add(catNext);
 
-    //     sliderContent[index].classList.add('team__block-content--active');
+        btnNextPets.addEventListener('click', () => {
 
-    // });
+            index++;
 
-    // btnPrev.addEventListener('click', () => {
+            if ( index == 3 ) {
+                index = 0;
+            }
 
-    //     if (index == 0) {
-    //         index = sliderContent.length - 1;
-    //         offsetPhoto = photoWidth * (sliderContent.length - 1);
-    //     } else {
-    //         index--;
-    //         offsetPhoto -= photoWidth;
-    //     }
+            if (index == 2) {
+                photoPets[0].classList.remove(catPrev);
+                photoPets[0].classList.add(catNext);
 
-    //     photoInner.style.transform = `translateX(-${offsetPhoto}px)`;
+                photoPets[1].classList.remove(catCenter);
+                photoPets[1].classList.add(catPrev);
 
-    //     sliderContent.forEach(item => {
-    //         item.classList.remove('team__block-content--active');
-    //     });
+                photoPets[2].classList.remove(catNext);
+                photoPets[2].classList.add(catCenter);
+            } else if (index == 0) {
+                photoPets[1].classList.remove(catPrev);
+                photoPets[1].classList.add(catNext);
 
-    //     sliderContent[index].classList.add('team__block-content--active');
+                photoPets[2].classList.remove(catCenter);
+                photoPets[2].classList.add(catPrev);
 
-    // });
+                photoPets[0].classList.remove(catNext);
+                photoPets[0].classList.add(catCenter);
+            } else if (index == 1) {
+                photoPets[2].classList.remove(catPrev);
+                photoPets[2].classList.add(catNext);
 
+                photoPets[0].classList.remove(catCenter);
+                photoPets[0].classList.add(catPrev);
+
+                photoPets[1].classList.remove(catNext);
+                photoPets[1].classList.add(catCenter);
+            }
+            
+        });
+    
+        btnPrevPets.addEventListener('click', () => {
+    
+            index--;
+
+            if ( index == -1 ) {
+                index = 2;
+            }
+
+            if (index == 2) {
+                photoPets[0].classList.remove(catCenter);
+                photoPets[0].classList.add(catNext);
+
+                photoPets[1].classList.remove(catNext);
+                photoPets[1].classList.add(catPrev);
+
+                photoPets[2].classList.remove(catPrev);
+                photoPets[2].classList.add(catCenter);
+            } else if (index == 0) {
+                photoPets[1].classList.remove(catCenter);
+                photoPets[1].classList.add(catNext);
+
+                photoPets[2].classList.remove(catNext);
+                photoPets[2].classList.add(catPrev);
+
+                photoPets[0].classList.remove(catPrev);
+                photoPets[0].classList.add(catCenter);
+            } else if (index == 1) {
+                photoPets[2].classList.remove(catCenter);
+                photoPets[2].classList.add(catNext);
+
+                photoPets[0].classList.remove(catNext);
+                photoPets[0].classList.add(catPrev);
+
+                photoPets[1].classList.remove(catPrev);
+                photoPets[1].classList.add(catCenter);
+            }
+    
+        });
+      }
 });

@@ -77,6 +77,9 @@
     &__block-content--active {
         display: block;
         opacity: 1;  
+        animation-name: fade;
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
     }
 
     &__button {
@@ -93,6 +96,11 @@
         }
     }
 }
+
+@keyframes fade {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+  }
 
 @media (max-width: $desktop) and (min-width: $tablet) {
     .recall {

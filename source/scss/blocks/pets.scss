@@ -65,7 +65,7 @@
         margin-top: 220px;
         margin-bottom: 80px;
 
-        &__photo {
+        &__photo--inner {
             display: grid;
             grid-template-columns: 517px 471px;
             grid-template-rows: 214px 241px;
@@ -89,35 +89,47 @@
         margin-top: 100px;
         margin-bottom: 90px;
 
-        &__photo {
+        &__photo--wrapper {
             position: relative;
             height: 485px;
             width: 603px;
             margin: 0 30px;
-
-            img {
-                position: absolute;
-
-                &:nth-child(3) {
-                    left: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
-
-                &:nth-child(1) {
-                    right: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
-
-                &:nth-child(2) {
-                    left: 50%;
-                    top: 0;
-                    transform: translateX(-50%);
-                    z-index: 1;
-                }
-            }
         }
+
+        &__photo--inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 485px;
+            width: 100%;
+        }
+
+        &__photo {
+            position: absolute;
+            transition: all .3s;
+        }
+
+        &__photo--left,
+        &__photo--right {
+            transform: scale(0.7);
+            z-index: 0;
+        }
+
+        &__photo--left {
+            transform-origin: 0 center;
+            left: 0;
+        }
+
+        &__photo--right {
+            transform-origin: 100% center;
+            right: 0;
+        }
+        &__photo--center {
+            z-index: 1;
+        }
+
+        
     }
 }
 
@@ -151,17 +163,16 @@
             font-size: 16px;
         }
 
-        &__photo {
+        &__photo--wrapper {
             margin: 0 20px;
-
-            img {
-                width: 100%;
-
-                &:not(:nth-child(2)) {
-                    display: none;
-                }
-            }
+            overflow: hidden;
+            width: 100%;
         }
-        
+
+        &__photo--inner {
+            display: flex;
+            align-items: center;
+            transition: .3s;
+        }
     }
 }

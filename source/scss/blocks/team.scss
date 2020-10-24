@@ -21,6 +21,9 @@
     &__block-content--active {
         display: block;
         opacity: 1;  
+        animation-name: fade;
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
     }
 
     &__name {
@@ -55,6 +58,11 @@
         position: absolute;
     }
 }
+
+@keyframes fade {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+  }
 
 @media (min-width: $tablet) {
     .team {
