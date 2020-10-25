@@ -5,6 +5,7 @@
     overflow: hidden;
 
     &__wrapper {
+        position: relative;
         display: flex;
         align-items: center;
         height: 100%;
@@ -55,6 +56,95 @@
     }
 }
 
+// @media (max-width: 1260px) {
+//     .header {
+//         &__social {
+//             display: none;
+//         }
+// }
+
+@media (min-width: 1260px) {
+    .header {
+
+        &__social {
+            position: absolute;
+            bottom: 60px;
+            left: -115px;
+            flex-direction: column;
+            align-items: center;
+
+            &::after {
+                position: absolute;
+                content: '';
+                top: -102px;
+                left: 50%;
+                width: 1px;
+                height: 77px;
+                background-color: rgba(#ffffff, 0.6);
+            }
+        }
+
+        &__social-item {
+            margin: 7px 0;
+        }
+
+        &__social-item--fb {
+            order: 1;
+        }
+
+        &__social-item--vk {
+            order: -1;
+        }
+
+        &__social-item + &__social-item {
+            margin-left: 0;
+        }
+
+        &__social-svg {
+            fill: #fff;
+        }
+    }
+}
+
+@media (max-width: 1259px) and (min-width: $tablet) {
+    .header {
+
+        &__social {
+            position: absolute;
+            bottom: 45px;
+            left: 0;
+            align-items: center;
+        }
+
+        &__social-item--fb {
+            order: 1;
+            margin-left: 12px;
+        }
+
+        &__social-item--vk {
+            order: -1;
+            margin-right: 12px;
+        }
+
+        &__social-item + &__social-item {
+            margin-left: 0;
+        }
+
+        &__social-svg {
+            fill: #fff;
+        }
+    }
+}
+
+@media (max-width: $tablet - 1) {
+    .header {
+
+        &__social {
+            display: none;
+        }
+    }
+}
+
 @media (max-width: $desktop) and (min-width: $min-desktop + 1) {
     .header {
         overflow: hidden;
@@ -80,6 +170,10 @@
             height: 535px;
             width: auto;
             left: 40%;
+        }
+
+        &__text {
+            margin-top: -80px;
         }
     }
 }
