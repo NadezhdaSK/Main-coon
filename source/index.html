@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кошачий питомник</title>
     <link rel="stylesheet" href="css/style.min.css">
-</head>
+    <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/YesevaOne-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <script>
+        document.createElement( "picture" );
+        </script>
+        <script src="js/picturefill.min.js" async=""></script>
+    </head>
 <body>
     <div style="display:none">
         <include src="build/img/icons/sprite.svg"></include>
-      </div>
+    </div>
 
     <!-- header -->
     
@@ -46,7 +55,15 @@
                 </li>
             </ul>
         </div>
-        <img src="img/HeaderCat@2x.png" alt="Рыжий Мейн кун" width="900" class="header__cat">
+        <picture>
+            <source type="image/webp" media="(max-width: 768px)" srcset="img/HeaderCat-mobile@1x.webp 1x, img/HeaderCat-mobile@2x.webp 2x">
+            <source type="image/webp" media="(max-width: 980px)" srcset="img/HeaderCat-tablet@1x.webp 1x, img/HeaderCat-tablet@2x.webp 2x">
+            <source type="image/webp"srcset="img/HeaderCat-desktop@1x.webp 1x, img/HeaderCat-desktop@2x.webp 2x">
+
+            <source media="(min-width: 768px)" srcset="img/HeaderCat-mobile@1x.png 1x, img/HeaderCat-mobile@2x.png 2x">
+            <source media="(max-width: 980px)"srcset="img/HeaderCat-tablet@1x.png 1x, img/HeaderCat-tablet@2x.png 2x">
+            <img class="header__cat" src="img/HeaderCat-desktop@1x.png" srcset="img/HeaderCat-desktop@2x.png 2x" alt="Рыжий Мейн кун" width="796" height="666">
+        </picture>
     </header>
 
     <!-- main -->
@@ -65,15 +82,27 @@
                     <li class="pets__item"><button>Котята</button></li>
                 </ul> -->
                 <div class="pets__slider">
-                    <button class="pets__arrow pets__arrow--left button__arrow button__arrow--left"></button>
+                    <button class="pets__arrow pets__arrow--left button__arrow button__arrow--left" aria-label="Листать влево"></button>
                     <div class="pets__photo--wrapper">
                         <div class="pets__photo--inner">
-                            <img class="pets__photo" src="img/Cat1.jpg" alt="Белый окрас" width="517">
-                            <img class="pets__photo" src="img/Cat3.jpg" alt="Пепельный окрас" width="471">
-                            <img class="pets__photo" src="img/Cat2.jpg" alt="Кофейный окрас" width="517">
+                            <img class="pets__photo" src="img/Cat1.jpg" srcset="img/Cat1@2x.jpg 2x" alt="Белый окрас" width="517" height="214">
+                            <img class="pets__photo" src="img/Cat3.jpg" srcset="img/Cat3@2x.jpg 2x" alt="Белый окрас" width="471" height="485">
+                            <img class="pets__photo" src="img/Cat2.jpg" srcset="img/Cat2@2x.jpg 2x" alt="Белый окрас" width="517" height="214">
+                            <!-- <picture>
+                                <source type="image/webp" srcset="img/Cat1.webp 1x, img/Cat1@2x.webp 2x">
+                                <img class="pets__photo" src="img/Cat1.jpg" srcset="img/Cat1@2x.jpg 2x" alt="Белый окрас" width="517">
+                            </picture>
+                            <picture>
+                                <source type="image/webp" srcset="img/Cat3.webp 1x, img/Cat3@2x.webp 2x">
+                                <img class="pets__photo" src="img/Cat3.jpg" srcset="img/Cat3@2x.jpg 2x" alt="Белый окрас" width="471">
+                            </picture>
+                            <picture>
+                                <source type="image/webp" srcset="img/Cat2.webp 1x, img/Cat2@2x.webp 2x">
+                                <img class="pets__photo" src="img/Cat2.jpg" srcset="img/Cat2@2x.jpg 2x" alt="Белый окрас" width="517">
+                            </picture> -->
                         </div>
                     </div>
-                    <button class="pets__arrow pets__arrow--right button__arrow button__arrow--right"></button>
+                    <button class="pets__arrow pets__arrow--right button__arrow button__arrow--right" aria-label="Листать вправо"></button>
                 </div>
                 <a class="pets__button button" href="#">Смотреть больше</a>
             </div>
@@ -85,7 +114,13 @@
             <h2 class="title features__title">Особенности породы</h2>
             <div class="features__descr">Мейн-Кун - это порода, которая вызывает к себе уважение. Приобретая в свой дом этого питомца, вы получите умное животное, которому нет равных </div>
             <div class="features__cat">
-                <img src="img/FeatureCat.png" alt="Особенности наших котов" class="features__img" width="632">
+                <picture>
+                    <source type="image/webp" media="(min-width: 1105px)" srcset="img/FeatureCat-desktop@1x.webp 1x, img/FeatureCat-desktop@2x.webp 2x">
+                    <source type="image/webp" media="(max-width: 1104px)" srcset="img/FeatureCat-tablet@1x.webp 1x, img/FeatureCat-tablet@2x.webp 2x">
+
+                    <source media="(max-width: 1104px)" srcset="img/FeatureCat-tablet@1x.png 1x, img/FeatureCat-tablet@2x.png 2x">
+                    <img class="features__img" src="img/FeatureCat-desktop@1x.png" srcset="img/FeatureCat-desktop@2x.png 2x" alt="Особенности наших котов" width="632" height="682">
+                </picture>
                 <div class="features__text">Легко уживается в семьях с детьми или другими животными</div>
                 <div class="features__text">Внешний вид этой кошки похож на дикую рысь</div>
                 <div class="features__text">Выполняет команды как дрессированная собака</div>
@@ -134,22 +169,22 @@
                 <li class="care__item">
                     <div class="care__subtitle">Шерсть</div>
                     <div class="care__descr">Мы разработали 8 правил, следуя которым, шерсть вашего кота всегда будет блестящей, мягкой и послушной</div>
-                    <a href="#" class="care__button"></a>
+                    <a href="#" class="care__button" aria-label="Подробнее о шерсти"></a>
                 </li>
                 <li class="care__item">
                     <div class="care__subtitle">Когти</div>
                     <div class="care__descr">Нужно ли стричь когти? Это мы и выясним, плюс ко всему расскажем как подобрать идеальную когтеточку</div>
-                    <a href="#" class="care__button"></a>
+                    <a href="#" class="care__button" aria-label="Подробнее о когтях"></a>
                 </li>
                 <li class="care__item">
                     <div class="care__subtitle">Уши и глаза</div>
                     <div class="care__descr">Владельцам котов необходимо регулярно осматривать ушки и глазасвоих питомцев, ведь это может быть признаками заболевания</div>
-                    <a href="#" class="care__button"></a>
+                    <a href="#" class="care__button" aria-label="Подробнее об ушах и глазах"></a>
                 </li>
                 <li class="care__item">
                     <div class="care__subtitle">Питание</div>
                     <div class="care__descr">В нашем питомнике существует два подхода: натуральное питание и питание промышленными кормами, но выбирать только вам</div>
-                    <a href="#" class="care__button"></a>
+                    <a href="#" class="care__button" aria-label="Подробнее о питании"></a>
                 </li>
             </ul>
         </section>
@@ -163,9 +198,17 @@
                 <div class="team__block-inner">
                     <div class="team__photo-wrapper">
                         <div class="team__photo-inner">
-                            <img class="team__photo" src="img/team.jpg" alt="Фото Сережи Попова" width="360" height="356">
-                            <img class="team__photo" src="http://placehold.it/360x356/" alt="Фото Ивана Сергеева" width="360" height="356">
-                            <img class="team__photo" src="http://placehold.it/360x356/ffcc89&text=photo" alt="Фото Светланы Васильевой" width="360" height="356">
+                            <picture>
+                                <source type="image/webp" media="(max-width: 768px)" srcset="img/team-mobile@1x.webp 1x, img/team-mobile@2x.webp 2x">
+                                <source type="image/webp" media="(max-width: 1366px)" srcset="img/team-tablet@1x.webp 1x, img/team-tablet@2x.webp 2x">
+                                <source type="image/webp" srcset="img/team-desktop@1x.webp 1x, img/team-desktop@2x.webp 2x">
+    
+                                <source media="(max-width: 1366px)" srcset="img/team-mobile@1x.jpg 1x, img/team-mobile@2x.jpg 2x">
+                                <source media="(max-width: 768px)" srcset="img/team-tablet@1x.jpg 1x, img/team-tablet@2x.jpg 2x">
+                                <img class="team__photo" src="img/team-desktop@1x.jpg" srcset="img/team-desktop@2x.jpg 2x" alt="Фото Сережи Попова" width="360" height="356">
+                            </picture>
+                            <img class="team__photo" src="http://placehold.it/360X356/&text=photo" alt="Фото Ивана Сергеева" width="360" height="356">
+                            <img class="team__photo" src="http://placehold.it/360X356/ffcc89&text=photo" alt="Фото Светланы Васильевой" width="360" height="356">
                         </div>
                     </div>
                     <div class="team__block-content">
@@ -253,8 +296,8 @@
                         </ul>
                     </div>
                 </div>
-                <button class="team__button team__button--left button__arrow button__arrow--left"></button>
-                <button class="team__button team__button--right button__arrow button__arrow--right"></button>
+                <button class="team__button team__button--left button__arrow button__arrow--left" aria-label="Листать влево"></button>
+                <button class="team__button team__button--right button__arrow button__arrow--right" aria-label="Листать вправо"></button>
             </div>
         </section>
 
@@ -267,7 +310,7 @@
                 <li class="answers__item active">
                     <div class="answers__question">
                         <div class="answers__text">С какого возраста можно забирать котенка из питомника?</div>
-                        <button class="answers__button"></button>
+                        <button class="answers__button" aria-label="Посмотреть ответ 1"></button>
                     </div>
                     <div class="answers__answer">
                         <div class="answers__answer-wrap">
@@ -280,7 +323,7 @@
                 <li class="answers__item">
                     <div class="answers__question">
                         <div class="answers__text">Как зарезервировать котенка?</div>
-                        <button class="answers__button"></button>
+                        <button class="answers__button" aria-label="Посмотреть ответ 2"></button>
                     </div>
                     <div class="answers__answer">
                         <div class="answers__answer-wrap">
@@ -293,7 +336,7 @@
                 <li class="answers__item">
                     <div class="answers__question">
                         <div class="answers__text">Можно ли купить кота, если я живу в другом городе?</div>
-                        <div class="answers__button"></div>
+                        <button class="answers__button" aria-label="Посмотреть ответ 3"></button>
                     </div>
                     <div class="answers__answer">
                         <div class="answers__answer-wrap">
@@ -306,7 +349,7 @@
                 <li class="answers__item">
                     <div class="answers__question">
                         <div class="answers__text">Как подготовить дом к приему нового питомца? </div>
-                        <button class="answers__button"></button>
+                        <button class="answers__button" aria-label="Посмотреть ответ 4"></button>
                     </div>
                     <div class="answers__answer">
                         <div class="answers__answer-wrap">
@@ -326,7 +369,15 @@
             <div class="recall__block">
                 <div class="recall__photo-wrapper">
                     <div class="recall__photo-inner">
-                        <img class="recall__photo" src="img/recall.jpg" alt="Фото Сережи Попова" width="481" height="331">
+                        <picture>
+                            <source type="image/webp" media="(max-width: 768px)" srcset="img/recall-mobile@1x.webp 1x, img/recall-mobile@2x.webp 2x">
+                            <source type="image/webp" media="(max-width: 1366px)" srcset="img/recall-tablet@1x.webp 1x, img/recall-tablet@2x.webp 2x">
+                            <source type="image/webp" srcset="img/recall-desktop@1x.webp 1x, img/recall-desktop@2x.webp 2x">
+
+                            <source media="(max-width: 768px)" srcset="img/recall-mobile@1x.jpg 1x, img/recall-mobile@2x.jpg 2x">
+                            <source media="(max-width: 1366px)" srcset="img/recall-tablet@1x.jpg 1x, img/recall-tablet@2x.jpg 2x">
+                            <img class="recall__photo" src="img/recall-desktop@1x.jpg" srcset="img/recall-desktop@2x.jpg 2x" alt="Фото Сережи Попова" width="481" height="331">
+                        </picture>                        
                         <img class="recall__photo" src="http://placehold.it/481x331/&text=photo" alt="Фото Ивана Сергеева" width="481" height="331">
                         <img class="recall__photo" src="http://placehold.it/481x331/ffcc89&text=photo" alt="Фото Светланы Васильевой" width="481" height="331">
                     </div>
@@ -400,8 +451,8 @@
                         </ul>
                     </div>
                 </div>
-                <button class="recall__button recall__button--left button__arrow button__arrow--left"></button>
-                <button class="recall__button recall__button--right button__arrow button__arrow--right"></button>
+                <button class="recall__button recall__button--left button__arrow button__arrow--left" aria-label="Листать влево"></button>
+                <button class="recall__button recall__button--right button__arrow button__arrow--right" aria-label="Листать вправо"></button>
             </div>
         </section>
 
@@ -441,6 +492,6 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="js/main.min.js"></script>
 </body>
 </html>

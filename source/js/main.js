@@ -1,6 +1,6 @@
-'use strict';
-
 window.addEventListener('DOMContentLoaded', () => {
+
+    'use strict';
 
     // accordion
 

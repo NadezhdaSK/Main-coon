@@ -56,13 +56,6 @@
     }
 }
 
-// @media (max-width: 1260px) {
-//     .header {
-//         &__social {
-//             display: none;
-//         }
-// }
-
 @media (min-width: 1260px) {
     .header {
 
@@ -217,7 +210,7 @@
         }
 
         &__cat {
-            width: 320px;
+            width: 275px;
             left: 50%;
             transform: translateX(-50%);
         }

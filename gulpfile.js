@@ -11,9 +11,9 @@ var csso = require("gulp-csso");
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
-var imagemin = require("gulp-imagemin");
+var webp = require("gulp-webp");
 var svgstore = require("gulp-svgstore");
-var uglify = require("gulp-uglify");
+var uglify = require('gulp-uglify-es').default;
 var pipeline = require("readable-stream").pipeline;
 
 var server = require("browser-sync").create();
@@ -34,13 +34,9 @@ gulp.task("css", function () {
     .pipe(server.stream());
 });
 
-gulp.task("images", function() {
-  return gulp.src("source/img/**/*.{png,jpg,svg}")
-    .pipe(imagemin([
-      imagemin.optipng({optimizationLevel: 3}),
-      imagemin.mozjpeg({progressive: true}),
-      imagemin.svgo()
-    ]))
+gulp.task("webp", function () {
+  return gulp.src("source/img/**/*.{png,jpg}")
+    .pipe(webp({quality: 90}))
     .pipe(gulp.dest("source/img"));
 });
 
@@ -65,6 +61,24 @@ gulp.task("clean", function () {
   return del("build");
 });
 
+gulp.task("compress", function() {
+  return pipeline(
+    gulp.src("source/js/main.js"),
+    uglify(),
+    rename("main.min.js"),
+    gulp.dest("build/js")
+  );
+});
+
+gulp.task("compressPicturefill", function() {
+  return pipeline(
+    gulp.src("source/js/picturefill.js"),
+    uglify(),
+    rename("picturefill.min.js"),
+    gulp.dest("build/js")
+  );
+});
+
 gulp.task("copy", function() {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
@@ -75,15 +89,6 @@ gulp.task("copy", function() {
     base: "source"
   })
     .pipe(gulp.dest("build"));
-});
-
-gulp.task("compress", function() {
-  return pipeline(
-    gulp.src("source/js/main.js"),
-    // uglify(),
-    // rename("main.min.js"),
-    gulp.dest("build/js")
-  );
 });
 
 gulp.task("server", function () {
@@ -106,5 +111,5 @@ gulp.task("refresh", function (done) {
   done();
 });
 
-gulp.task("build", gulp.series("clean", "copy", "css", "compress", "sprite", "html"));
+gulp.task("build", gulp.series("clean", "copy", "css", "compress", "compressPicturefill", "sprite", "html"));
 gulp.task("start", gulp.series("build", "server"));

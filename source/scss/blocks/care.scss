@@ -1,8 +1,12 @@
 .care {
     width: 100%;
-    background: $bgdark url(../img/bgCat.jpg) no-repeat 50% 50%;
+    background: $bgdark url(../img/bgCat@1x.jpg) no-repeat 50% 50%;
     background-size: cover;
 
+    @media (min-resolution: $retina-dpi) and (min-resolution: $retina-dppx) {
+        background-image: url(../img/bgCat@2x.jpg);
+        // background-size: 320px auto;
+      }
 
     &__list {
         margin: 0 auto;
