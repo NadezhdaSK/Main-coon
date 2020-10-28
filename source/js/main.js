@@ -115,7 +115,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let offsetPhoto = 0,
             photoWidth = window.getComputedStyle(photoWrapperPets).width;
-            photoWidth = +photoWidth.slice(0, photoWidth.length - 2);
+            photoWidth = +photoWidth.replace(/\D/g, '');
 
             photoPets.forEach(item => {
                 item.style.width = `${photoWidth}px`;
